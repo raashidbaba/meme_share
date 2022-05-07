@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
 
 
@@ -11,11 +12,20 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/share"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="#000000"
         tools:srcCompat="@tools:sample/avatars" />
+<ProgressBar
+    android:id="@+id/progessBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="@id/imageView"
+    app:layout_constraintBottom_toBottomOf="@id/imageView"
+    app:layout_constraintRight_toRightOf="@id/imageView"
+    app:layout_constraintLeft_toLeftOf="@id/imageView"/>
 
     <Button
         android:id="@+id/share"
@@ -24,8 +34,10 @@
         android:text="@string/share"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:padding="20dp"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
         android:onClick="shareMeme"
+        android:backgroundTint="@color/shareButtonColor"
         app:layout_constraintRight_toRightOf="@+id/guideline"/>
 
     <Button
@@ -33,10 +45,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/next"
-        android:padding="20dp"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="nextMeme"
+        android:backgroundTint="@color/nextButtonColor"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"/>
 
     <androidx.constraintlayout.widget.Guideline
